@@ -20,7 +20,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "deploy-ssh": "set GIT_SSH_COMMAND=ssh -i ~/.ssh/id_ed25519 && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
