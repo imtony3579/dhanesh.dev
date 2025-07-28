@@ -292,7 +292,7 @@ function App() {
         </div>
       </Section>
 
-      {/* Education Section */}
+      {/* Education Section
       <Section id="education">
         <h2>Education</h2>
         <div className="education-grid">
@@ -321,7 +321,7 @@ function App() {
             <p>GATE 2017: 99.03 percentile (AIR 43) in Aerospace Engineering</p>
           </motion.div>
         </div>
-      </Section>
+      </Section> */}
 
       {/* Contact Section */}
       <Section id="contact">
