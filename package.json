@@ -21,7 +21,8 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "deploy-ssh": "npm run clean && npm run build && GIT_SSH_COMMAND=ssh -i ~/.ssh/id_ed25519 && gh-pages -d build"
+    "deploy-ssh": "npm run clean && npm run build && GIT_SSH_COMMAND=ssh -i ~/.ssh/id_ed25519 && gh-pages -d build",
+    "clean": "rimraf build"
   },
   "eslintConfig": {
     "extends": [
@@ -42,6 +43,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0"
+    "gh-pages": "^6.3.0",
+    "rimraf": "^6.0.1"
   }
 }
