@@ -1,0 +1,179 @@
+/* Navigation Styles - Code Editor Tab Bar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  background: #232526;
+  border-bottom: 1px solid #3E3D32;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  height: 50px;
+}
+
+.navbar h1 {
+  font-family: 'Fira Code', monospace;
+  font-size: clamp(1rem, 4vw, 1.4rem);
+  font-weight: 600;
+  cursor: pointer;
+  color: #A6E22E;
+  padding: 0 20px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  background: #1B1D1E;
+  border-right: 1px solid #3E3D32;
+  position: relative;
+}
+
+.navbar h1::before {
+  content: "●";
+  color: #F92672;
+  margin-right: 8px;
+  font-size: 0.8rem;
+}
+
+.navbar h1::after {
+  content: "dhanesh.dev";
+  font-size: 0.75rem;
+  color: #75715E;
+  position: absolute;
+  bottom: 2px;
+  left: 20px;
+}
+
+/* Desktop Navigation - Editor Tabs */
+.desktop-nav {
+  display: flex;
+  list-style: none;
+  gap: 0;
+  height: 50px;
+}
+
+.desktop-nav li a {
+  font-family: 'Fira Code', monospace;
+  color: #F8F8F0;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 0.85rem;
+  padding: 0 20px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  position: relative;
+  background: #2F3129;
+  border-right: 1px solid #3E3D32;
+  border-left: 1px solid #3E3D32;
+}
+
+.desktop-nav li a::before {
+  content: "◦";
+  color: #66D9EF;
+  margin-right: 6px;
+  font-size: 0.6rem;
+}
+
+.desktop-nav li a:hover {
+  background: #3E3D32;
+  color: #A6E22E;
+}
+
+.desktop-nav li a:hover::before {
+  color: #F92672;
+}
+
+/* Mobile Navigation Button */
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 3px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+  margin-right: 15px;
+}
+
+.mobile-menu-btn span {
+  width: 20px;
+  height: 2px;
+  background: #F8F8F0;
+  border-radius: 1px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.mobile-menu-btn span.active:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-btn span.active:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn span.active:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+  position: fixed;
+  top: 50px;
+  right: 0;
+  width: 280px;
+  height: calc(100vh - 50px);
+  background: #232526;
+  border-left: 1px solid #3E3D32;
+  z-index: 999;
+  padding-top: 20px;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  padding: 0 15px;
+}
+
+.mobile-nav ul li {
+  margin-bottom: 5px;
+}
+
+.mobile-nav ul li a {
+  font-family: 'Fira Code', monospace;
+  color: #F8F8F0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 400;
+  padding: 12px 15px;
+  display: block;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.mobile-nav ul li a::before {
+  content: "◦ ";
+  color: #66D9EF;
+  margin-right: 8px;
+}
+
+.mobile-nav ul li a:hover {
+  background: #3E3D32;
+  color: #A6E22E;
+  border-color: #66D9EF;
+}
+
+/* Mobile Overlay */
+.mobile-overlay {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 50px);
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 998;
+}

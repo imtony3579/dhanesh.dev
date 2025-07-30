@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import "./App.css";
+import "./styles/variables.css";
+import "./styles/base.css";
+import "./styles/navbar.css";
+import "./styles/components.css";
+import "./styles/footer.css";
 
 function Section({ children, id }) {
   return (
@@ -121,6 +125,15 @@ function Footer() {
               className="footer-link"
             >
               LinkedIn
+            </motion.a>
+             <motion.a
+              href="mailto:dhaneshkumar15.prajapati@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ color: "#66D9EF" }}
+              className="footer-link"
+            >
+              Gmail
             </motion.a>
           </div>
         </motion.div>
@@ -470,7 +483,7 @@ function App() {
       </Section>
 
       {/* Contact Section */}
-      <Section id="contact">
+      {/* <Section id="contact">
         <h2>Let's Connect</h2>
         <motion.p
           initial={{ opacity: 0 }}
@@ -511,7 +524,7 @@ function App() {
             📧 Gmail
           </motion.a>
         </div>
-      </Section>
+      </Section> */}
 
        {/* Footer */}
       <Footer />

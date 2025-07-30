@@ -1,0 +1,14 @@
+/* CSS Variables and Imports */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-primary: #1B1D1E;
+  --bg-secondary: #232526;
+  --border-color: #3E3D32;
+  --text-primary: #F8F8F0;
+  --text-secondary: #75715E;
+  --accent-green: #A6E22E;
+  --accent-blue: #66D9EF;
+  --accent-pink: #F92672;
+  --accent-yellow: #E6DB74;
+}

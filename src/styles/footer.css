@@ -1,0 +1,171 @@
+/* Footer Styles - Code Editor Theme */
+.footer {
+  background: #232526;
+  border-top: 1px solid #3E3D32;
+  margin-top: 40px;
+  position: relative;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-left {
+  flex: 1;
+}
+
+.copyright {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  color: #F8F8F0;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.copyright::before {
+  content: "// ";
+  color: #75715E;
+  font-weight: 400;
+}
+
+.footer-subtitle {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+  color: #75715E;
+}
+
+.footer-subtitle::before {
+  content: "/* ";
+  color: #75715E;
+}
+
+.footer-subtitle::after {
+  content: " */";
+  color: #75715E;
+}
+
+.footer-right {
+  flex: 1;
+  text-align: right;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.footer-link {
+  font-family: 'Fira Code', monospace;
+  color: #66D9EF;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 8px 12px;
+  border: 1px solid #3E3D32;
+  border-radius: 4px;
+  background: #1B1D1E;
+  transition: all 0.3s ease;
+}
+
+.footer-link::before {
+  content: "<";
+  color: #F92672;
+  margin-right: 4px;
+}
+
+.footer-link::after {
+  content: "/>";
+  color: #F92672;
+  margin-left: 4px;
+}
+
+.footer-link:hover {
+  background: #3E3D32;
+  border-color: currentColor;
+  transform: translateY(-2px);
+}
+
+/* Status Bar - Like VS Code */
+.footer-status-bar {
+  background: #1B1D1E;
+  border-top: 1px solid #3E3D32;
+  padding: 8px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.75rem;
+  color: #75715E;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot.green {
+  background: #A6E22E;
+  box-shadow: 0 0 6px rgba(166, 226, 46, 0.5);
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 25px;
+  }
+  
+  .footer-right {
+    text-align: center;
+  }
+  
+  .footer-links {
+    justify-content: center;
+  }
+  
+  .footer-status-bar {
+    padding: 8px 25px;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+    padding: 25px 20px;
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .footer-status-bar {
+    padding: 8px 20px;
+  }
+  
+  .status-item {
+    font-size: 0.7rem;
+  }
+}
