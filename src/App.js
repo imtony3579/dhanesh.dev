@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "./App.css";
 
@@ -25,7 +25,7 @@ function ProjectCard({ title, description, technologies, delay = 0 }) {
       transition={{ duration: 0.6, delay }}
       whileHover={{ 
         scale: 1.02, 
-        boxShadow: "0 20px 40px rgba(39,225,193, 0.3)",
+        boxShadow: "0 20px 40px rgba(255, 255, 255, 0.1)",
         transition: { duration: 0.3 }
       }}
       className="project-card"
@@ -47,7 +47,7 @@ function SkillItem({ children, delay = 0 }) {
       initial={{ opacity: 0, x: -20 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5, delay }}
-      whileHover={{ x: 10, color: "#27e1c1" }}
+      whileHover={{ x: 10, color: "#ffffff" }}
       className="skill-item"
     >
       {children}
@@ -76,6 +76,16 @@ function ExperienceCard({ company, role, duration, achievements, delay = 0 }) {
 }
 
 function App() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
     <div className="App">
       {/* Navigation */}
@@ -86,12 +96,14 @@ function App() {
         className="navbar"
       >
         <motion.h1 
-          whileHover={{ scale: 1.05, color: "#27e1c1" }}
+          whileHover={{ scale: 1.05, color: "#ffffff" }}
           transition={{ duration: 0.3 }}
         >
           Dhaneshkumar Prajapati
         </motion.h1>
-        <ul>
+        
+        {/* Desktop Navigation */}
+        <ul className="desktop-nav">
           <li><motion.a whileHover={{ scale: 1.1 }} href="#about">About</motion.a></li>
           <li><motion.a whileHover={{ scale: 1.1 }} href="#experience">Experience</motion.a></li>
           <li><motion.a whileHover={{ scale: 1.1 }} href="#skills">Skills</motion.a></li>
@@ -99,6 +111,49 @@ function App() {
           <li><motion.a whileHover={{ scale: 1.1 }} href="#education">Education</motion.a></li>
           <li><motion.a whileHover={{ scale: 1.1 }} href="#contact">Contact</motion.a></li>
         </ul>
+
+        {/* Mobile Menu Button */}
+        <motion.button
+          className="mobile-menu-btn"
+          onClick={toggleMobileMenu}
+          whileTap={{ scale: 0.95 }}
+          aria-label="Toggle mobile menu"
+        >
+          <span className={mobileMenuOpen ? 'active' : ''}></span>
+          <span className={mobileMenuOpen ? 'active' : ''}></span>
+          <span className={mobileMenuOpen ? 'active' : ''}></span>
+        </motion.button>
+
+        {/* Mobile Navigation */}
+        <motion.div
+          className="mobile-nav"
+          initial={{ opacity: 0, x: '100%' }}
+          animate={{ 
+            opacity: mobileMenuOpen ? 1 : 0, 
+            x: mobileMenuOpen ? '0%' : '100%' 
+          }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+        >
+          <ul>
+            <li><a href="#about" onClick={closeMobileMenu}>About</a></li>
+            <li><a href="#experience" onClick={closeMobileMenu}>Experience</a></li>
+            <li><a href="#skills" onClick={closeMobileMenu}>Skills</a></li>
+            <li><a href="#projects" onClick={closeMobileMenu}>Projects</a></li>
+            <li><a href="#education" onClick={closeMobileMenu}>Education</a></li>
+            <li><a href="#contact" onClick={closeMobileMenu}>Contact</a></li>
+          </ul>
+        </motion.div>
+
+        {/* Mobile Menu Overlay */}
+        {mobileMenuOpen && (
+          <motion.div
+            className="mobile-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={closeMobileMenu}
+          />
+        )}
       </motion.nav>
 
       {/* Hero Section */}
@@ -134,7 +189,7 @@ function App() {
       </Section>
 
       {/* About Section */}
-      <Section id="about">
+      {/* <Section id="about">
         <h2>About Me</h2>
         <motion.p
         initial={{ opacity: 0 }}
@@ -181,38 +236,61 @@ function App() {
           This balance between technical expertise and personal wellness drives my approach to both 
           life and software development.
         </motion.p>
+      </Section> */}
+            <Section id="about">
+        <h2>About Me</h2>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+       I'm a Software Developer and Machine Learning Engineer with over 
+       <strong> 4 years</strong> of experience building smart applications 
+       powered by AI and mobile solutions. I specialize in creating 
+       software that can learn from data and make predictions, helping 
+       businesses solve real-world problems more efficiently. 
+       My background includes graduate research at <strong>IIT Bombay</strong>, 
+       where I developed complex numerical tools for aerospace engineering, 
+       giving me a strong foundation in <strong>computational mathematics</strong> and <strong>physics-based modeling</strong>. Currently, at <strong>Lymphomap Inc.</strong>, 
+       I've engineered AI/ML solutions achieving <strong>98.7% accuracy </strong> 
+       for medical diagnosis, built scalable full-stack applications, 
+       and <strong>optimized cloud infrastructure to reduce costs by 30% </strong>. 
+       I've also developed several mobile apps using Flutter 
+       and am currently implementing real-time communication 
+       features using WebSocket technology with Django for live updates. 
+        </motion.p>
       </Section>
-
-
 
       {/* Experience Section */}
       <Section id="experience">
         <h2>Work Experience</h2>
-        <ExperienceCard
-          delay={0.1}
-          role="Software Developer"
-          company="Lymphomap Inc., Long Island City, NY"
-          duration="Jan 2021 - Present (Remote)"
-          achievements={[
-            "Engineered a Leukemia diagnosis solution with 98.7% accuracy using R scripts and Python ML models",
-            "Built user-friendly AI/ML pipeline enabling non-technical users to create automated analytics solutions",
-            "Reduced AWS infrastructure costs by 30% through strategic optimization and auto-scaling policies",
-            "Migrated production databases from PostgreSQL 10.23 to 16.1 with zero downtime using Blue-Green deployment",
-            "Developed cross-platform Flutter apps released on Google Play and Apple App Store",
-            "Optimized Django Channels WebSocket consumers for scalable real-time chat and video features"
-          ]}
-        />
-        <ExperienceCard
-          delay={0.3}
-          role="Software Developer"
-          company="Risk Latte Artificial Intelligence Inc., Montreal, Canada"
-          duration="Mar 2020 - Mar 2021 (Remote)"
-          achievements={[
-            "Designed high-performance backend for Lbil.ai using Django and Daphne with real-time chat functionality",
-            "Managed backend infrastructure and deployments for 5 production websites",
-            "Implemented scalable REST APIs and WebSocket connections for real-time features"
-          ]}
-        />
+        <div className="experience-grid">
+          <ExperienceCard
+            delay={0.1}
+            role="Software Developer"
+            company="Lymphomap Inc., Long Island City, NY"
+            duration="Jan 2021 - Present (Remote)"
+            achievements={[
+              "Engineered a Leukemia diagnosis solution with 98.7% accuracy using R scripts and Python ML models",
+              "Built user-friendly AI/ML pipeline enabling non-technical users to create automated analytics solutions",
+              "Reduced AWS infrastructure costs by 30% through strategic optimization and auto-scaling policies",
+              "Migrated production databases from PostgreSQL 10.23 to 16.1 with zero downtime using Blue-Green deployment",
+              "Developed cross-platform Flutter apps released on Google Play and Apple App Store",
+              "Optimized Django Channels WebSocket consumers for scalable real-time chat and video features"
+            ]}
+          />
+          <ExperienceCard
+            delay={0.3}
+            role="Software Developer"
+            company="Risk Latte Artificial Intelligence Inc., Montreal, Canada"
+            duration="Mar 2020 - Mar 2021 (Remote)"
+            achievements={[
+              "Designed high-performance backend for Lbil.ai using Django and Daphne with real-time chat functionality",
+              "Managed backend infrastructure and deployments for 5 production websites",
+              "Implemented scalable REST APIs and WebSocket connections for real-time features"
+            ]}
+          />
+        </div>
       </Section>
 
       {/* Skills Section */}
@@ -237,7 +315,7 @@ function App() {
               <SkillItem delay={0.2}>Docker</SkillItem>
               <SkillItem delay={0.3}>Nginx</SkillItem>
               <SkillItem delay={0.4}>Redis</SkillItem>
-              <SkillItem delay={0.5}>CI/CD Pipelines</SkillItem>
+              <SkillItem delay={0.5}>Gunicorn & Daphne</SkillItem>
             </ul>
           </div>
           <div className="skill-category">
@@ -247,7 +325,7 @@ function App() {
               <SkillItem delay={0.2}>Flutter & Dart</SkillItem>
               <SkillItem delay={0.3}>Scikit-learn & Pandas</SkillItem>
               <SkillItem delay={0.4}>Celery</SkillItem>
-              <SkillItem delay={0.5}>Firebase</SkillItem>
+              <SkillItem delay={0.5}>REST API</SkillItem>
             </ul>
           </div>
           <div className="skill-category">
@@ -292,7 +370,7 @@ function App() {
         </div>
       </Section>
 
-      {/* Education Section
+      {/* Education Section */}
       <Section id="education">
         <h2>Education</h2>
         <div className="education-grid">
@@ -321,7 +399,7 @@ function App() {
             <p>GATE 2017: 99.03 percentile (AIR 43) in Aerospace Engineering</p>
           </motion.div>
         </div>
-      </Section> */}
+      </Section>
 
       {/* Contact Section */}
       <Section id="contact">
@@ -338,7 +416,7 @@ function App() {
             href="https://github.com/imtony3579"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.1, color: "#27e1c1" }}
+            whileHover={{ scale: 1.1, color: "#ffffff" }}
             whileTap={{ scale: 0.95 }}
             className="contact-link"
           >
@@ -348,11 +426,21 @@ function App() {
             href="https://linkedin.com/in/erdhanesh"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.1, color: "#27e1c1" }}
+            whileHover={{ scale: 1.1, color: "#ffffff" }}
             whileTap={{ scale: 0.95 }}
             className="contact-link"
           >
             💼 LinkedIn
+          </motion.a>
+           <motion.a
+            href="mailto:dhaneshkumar15.prajapati@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.1, color: "#ffffff" }}
+            whileTap={{ scale: 0.95 }}
+            className="contact-link"
+          >
+            📧 Gmail
           </motion.a>
         </div>
       </Section>
