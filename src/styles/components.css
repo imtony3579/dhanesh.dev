@@ -544,7 +544,7 @@
 
 .education-card h4 {
   font-family: 'Fira Code', monospace;
-  color: #A6E22E;
+  color: #F92672;
   font-size: 0.95rem;
   margin: 10px 0 8px 20px;
   font-weight: 500;
@@ -556,6 +556,10 @@
   line-height: 1.6;
   font-size: 0.8rem;
   margin-left: 20px;
+}
+
+.education-card .duration {
+  color: #A6E22E;
 }
 
 /* Contact Links - Function Calls */
@@ -606,8 +610,8 @@
   position: relative;
 }
 
-.section::before {
-  content: "1\A 2\A 3\A 4\A 5\A 6\A 7\A 8\A 9\A 10\A 11\A 12\A 13\A 14\A 15\A 16\A 17\A 18\A 19\A 20";
+ /* Add this new CSS for dynamic line numbers */
+.line-numbers {
   position: absolute;
   left: 5px;
   top: 60px;
@@ -618,6 +622,7 @@
   line-height: 1.7;
   z-index: 1;
   pointer-events: none;
+  user-select: none;
 }
 
 /* Responsive Design */

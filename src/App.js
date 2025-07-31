@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import CodeSection from "./components/CodeSection";
 import "./styles/variables.css";
 import "./styles/base.css";
 import "./styles/navbar.css";
@@ -130,7 +131,7 @@ function Footer() {
               href="mailto:dhaneshkumar15.prajapati@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ color: "#66D9EF" }}
+              whileHover={{ color: "#ef6666ff" }}
               className="footer-link"
             >
               Gmail
@@ -149,7 +150,7 @@ function Footer() {
           React • JavaScript • CSS
         </span>
         <span className="status-item">
-          Last updated: {new Date().toLocaleDateString()}
+          Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric', day: '2-digit' })}
         </span>
       </div>
     </motion.footer>
@@ -190,7 +191,7 @@ function App() {
           <li><motion.a whileHover={{ scale: 1.1 }} href="#skills">Skills</motion.a></li>
           <li><motion.a whileHover={{ scale: 1.1 }} href="#projects">Projects</motion.a></li>
           <li><motion.a whileHover={{ scale: 1.1 }} href="#education">Education</motion.a></li>
-          <li><motion.a whileHover={{ scale: 1.1 }} href="#contact">Contact</motion.a></li>
+          {/* <li><motion.a whileHover={{ scale: 1.1 }} href="#contact">Contact</motion.a></li> */}
         </ul>
 
         {/* Mobile Menu Button */}
@@ -238,7 +239,7 @@ function App() {
       </motion.nav>
 
       {/* Hero Section */}
-      <Section id="hero">
+      <CodeSection id="hero">
         <motion.div 
           className="hero-content"
           initial={{ scale: 0.8, opacity: 0 }}
@@ -267,58 +268,10 @@ function App() {
             AI/ML • Full Stack • Mobile Development • DevOps
           </motion.p>
         </motion.div>
-      </Section>
+      </CodeSection>
 
       {/* About Section */}
-      {/* <Section id="about">
-        <h2>About Me</h2>
-        <motion.p
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-      >
-        I'm a passionate Software Developer and Machine Learning Engineer with 4+ years of experience 
-        building <strong>AI-powered applications</strong> and <strong>mobile solutions</strong>. I specialize in creating 
-        smart software that can learn from data and make predictions, helping businesses solve real-world 
-        problems efficiently. I've developed several <strong>mobile apps using Flutter</strong> and am currently 
-        working on setting up <strong>real-time communication features using WebSocket technology with Django</strong> 
-        to enable instant messaging and live updates in web applications.
-      </motion.p>
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          As a former graduate researcher at <strong>IIT Bombay</strong>, I developed numerical solvers for aerospace 
-          engineering problems using Python and C++, and worked on cutting-edge aerodynamic projects 
-          including designing unique spike geometries to reduce drag in hypersonic flow regimes through 
-          experimental and numerical simulation approaches. This research background gives me a strong 
-          foundation in <strong>computational mathematics</strong> and <strong>physics-based modeling</strong>.
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          Currently at <strong>Lymphomap Inc.</strong>, I've engineered AI/ML solutions achieving 98.7% accuracy for 
-          medical diagnosis, built scalable full-stack applications, and optimized cloud infrastructure 
-          to reduce costs by 30%. I bridge the gap between theoretical machine learning concepts and 
-          practical software engineering, creating solutions that are both mathematically robust and 
-          commercially viable.
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-        >
-          Beyond coding, I'm a <strong>passionate cook</strong> who enjoys experimenting with different cuisines and 
-          recipes from around the world. I'm also dedicated to <strong>bodybuilding</strong> and am a regular at the 
-          gym, believing that physical fitness enhances mental clarity and problem-solving abilities. 
-          This balance between technical expertise and personal wellness drives my approach to both 
-          life and software development.
-        </motion.p>
-      </Section> */}
-            <Section id="about">
+      <CodeSection id="about">
         <h2>About Me</h2>
         <motion.p
           initial={{ opacity: 0 }}
@@ -340,10 +293,10 @@ function App() {
        and am currently implementing real-time communication 
        features using WebSocket technology with Django for live updates. 
         </motion.p>
-      </Section>
+      </CodeSection>
 
       {/* Experience Section */}
-      <Section id="experience">
+      <CodeSection id="experience">
         <h2>Work Experience</h2>
         <div className="experience-grid">
           <ExperienceCard
@@ -372,10 +325,10 @@ function App() {
             ]}
           />
         </div>
-      </Section>
+      </CodeSection>
 
       {/* Skills Section */}
-      <Section id="skills">
+      <CodeSection id="skills">
         <h2>Skills & Technologies</h2>
         <div className="skills-grid">
           <div className="skill-category">
@@ -418,10 +371,10 @@ function App() {
             </ul>
           </div>
         </div>
-      </Section>
+      </CodeSection>
 
       {/* Projects Section */}
-      <Section id="projects">
+      <CodeSection id="projects">
         <h2>Featured Projects & Research</h2>
         <div className="projects-grid">
           <ProjectCard
@@ -449,10 +402,10 @@ function App() {
             technologies="Django Channels, WebSocket, Redis, PostgreSQL"
           />
         </div>
-      </Section>
+      </CodeSection>
 
       {/* Education Section */}
-      <Section id="education">
+      <CodeSection id="education">
         <h2>Education</h2>
         <div className="education-grid">
           <motion.div
@@ -464,7 +417,7 @@ function App() {
             <h3>M.Tech in Aerospace Engineering</h3>
             <h4>IIT Bombay</h4>
             <p className="duration">Aug 2019</p>
-            <p><strong>CGPA:</strong> 9.01/10</p>
+            
             <p>Volunteered in organizing TEQIP-III workshop hosting 500+ faculty members from across India</p>
           </motion.div>
           <motion.div
@@ -476,11 +429,11 @@ function App() {
             <h3>B.Tech Aeronautical Engineering</h3>
             <h4>The Aeronautical Society of India</h4>
             <p className="duration">Sep 2017</p>
-            <p><strong>CGPA:</strong> 64.9%</p>
+            
             <p>GATE 2017: 99.03 percentile (AIR 43) in Aerospace Engineering</p>
           </motion.div>
         </div>
-      </Section>
+      </CodeSection>
 
       {/* Contact Section */}
       {/* <Section id="contact">
