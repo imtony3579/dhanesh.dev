@@ -779,7 +779,7 @@ body {
 
 .education-card h4 {
   font-family: 'Fira Code', monospace;
-  color: #F92672;
+  color: #A6E22E;
   font-size: 0.95rem;
   margin: 10px 0 8px 20px;
   font-weight: 500;
@@ -793,9 +793,6 @@ body {
   margin-left: 20px;
 }
 
-.education-card .duration {
-  color: #A6E22E;
-}
 
 /* Contact Links - Function Calls */
 .contact-links {
