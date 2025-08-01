@@ -54,7 +54,7 @@ const LineNumbers = ({ sectionRef }) => {
       style={{
         position: 'absolute',
         left: '-25px',
-        top: '60px',
+        top: '50px',
         fontFamily: "'Fira Code', monospace",
         fontSize: '0.7rem',
         color: '#3E3D32',

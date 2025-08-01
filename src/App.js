@@ -7,20 +7,20 @@ import "./styles/navbar.css";
 import "./styles/components.css";
 import "./styles/footer.css";
 
-function Section({ children, id }) {
-  return (
-    <motion.section
-      id={id}
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true, margin: "-100px" }}
-      className="section"
-    >
-      {children}
-    </motion.section>
-  );
-}
+// function Section({ children, id }) {
+//   return (
+//     <motion.section
+//       id={id}
+//       initial={{ opacity: 0, y: 30 }}
+//       whileInView={{ opacity: 1, y: 0 }}
+//       transition={{ duration: 0.8, ease: "easeOut" }}
+//       viewport={{ once: true, margin: "-100px" }}
+//       className="section"
+//     >
+//       {children}
+//     </motion.section>
+//   );
+// }
 
 function ProjectCard({ title, description, technologies, delay = 0 }) {
   return (
@@ -265,7 +265,7 @@ function App() {
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 0.8 }}
           >
-            AI/ML • Full Stack • Mobile Development • DevOps
+            AI/ML • Full Stack • Mobile Development 
           </motion.p>
         </motion.div>
       </CodeSection>
