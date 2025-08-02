@@ -1,161 +1,16 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import CodeSection from "./components/CodeSection";
+import Footer from "./components/Footer";
+import ExperienceCard from "./components/ExperienceCard";
+import ProjectCard from "./components/ProjectCard";
+import SkillItem from "./components/SkillItem";
 import "./styles/variables.css";
 import "./styles/base.css";
 import "./styles/navbar.css";
 import "./styles/components.css";
 import "./styles/footer.css";
 
-// function Section({ children, id }) {
-//   return (
-//     <motion.section
-//       id={id}
-//       initial={{ opacity: 0, y: 30 }}
-//       whileInView={{ opacity: 1, y: 0 }}
-//       transition={{ duration: 0.8, ease: "easeOut" }}
-//       viewport={{ once: true, margin: "-100px" }}
-//       className="section"
-//     >
-//       {children}
-//     </motion.section>
-//   );
-// }
-
-function ProjectCard({ title, description, technologies, delay = 0 }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.6, delay }}
-      whileHover={{ 
-        scale: 1.02, 
-        boxShadow: "0 20px 40px rgba(255, 255, 255, 0.1)",
-        transition: { duration: 0.3 }
-      }}
-      className="project-card"
-    >
-      <h3>{title}</h3>
-      <p>{description}</p>
-      {technologies && (
-        <div className="tech-stack">
-          <small><strong>Technologies:</strong> {technologies}</small>
-        </div>
-      )}
-    </motion.div>
-  );
-}
-
-function SkillItem({ children, delay = 0 }) {
-  return (
-    <motion.li
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.5, delay }}
-      whileHover={{ x: 10, color: "#ffffff" }}
-      className="skill-item"
-    >
-      {children}
-    </motion.li>
-  );
-}
-
-function ExperienceCard({ company, role, duration, achievements, delay = 0 }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay }}
-      className="experience-card"
-    >
-      <h3>{role}</h3>
-      <h4>{company}</h4>
-      <p className="duration">{duration}</p>
-      <ul>
-        {achievements.map((achievement, index) => (
-          <li key={index}>{achievement}</li>
-        ))}
-      </ul>
-    </motion.div>
-  );
-}
-
-
-function Footer() {
-  const currentYear = new Date().getFullYear();
-  
-  return (
-    <motion.footer
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      className="footer"
-    >
-      <div className="footer-content">
-        <motion.div 
-          className="footer-left"
-          whileHover={{ scale: 1.02 }}
-        >
-          <p className="copyright">
-            © {currentYear} Dhaneshkumar Prajapati. All rights reserved.
-          </p>
-          <p className="footer-subtitle">
-            Built with React & ❤️ • Inspired by code editors
-          </p>
-        </motion.div>
-        
-        <motion.div 
-          className="footer-right"
-          whileHover={{ scale: 1.05 }}
-        >
-          <div className="footer-links">
-            <motion.a
-              href="https://github.com/imtony3579"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ color: "#A6E22E" }}
-              className="footer-link"
-            >
-              GitHub
-            </motion.a>
-            <motion.a
-              href="https://linkedin.com/in/erdhanesh"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ color: "#66D9EF" }}
-              className="footer-link"
-            >
-              LinkedIn
-            </motion.a>
-             <motion.a
-              href="mailto:dhaneshkumar15.prajapati@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ color: "#ef6666ff" }}
-              className="footer-link"
-            >
-              Gmail
-            </motion.a>
-          </div>
-        </motion.div>
-      </div>
-      
-      {/* Code Editor Style Footer Bar */}
-      <div className="footer-status-bar">
-        <span className="status-item">
-          <span className="status-dot green"></span>
-          Portfolio • Live
-        </span>
-        <span className="status-item">
-          React • JavaScript • CSS
-        </span>
-        <span className="status-item">
-          Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric', day: '2-digit' })}
-        </span>
-      </div>
-    </motion.footer>
-  );
-}
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -435,51 +290,6 @@ function App() {
         </div>
       </CodeSection>
 
-      {/* Contact Section */}
-      {/* <Section id="contact">
-        <h2>Let's Connect</h2>
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          I'm always interested in discussing new opportunities and innovative projects!
-        </motion.p>
-        <div className="contact-links">
-          <motion.a
-            href="https://github.com/imtony3579"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.1, color: "#ffffff" }}
-            whileTap={{ scale: 0.95 }}
-            className="contact-link"
-          >
-            🐱 GitHub
-          </motion.a>
-          <motion.a
-            href="https://linkedin.com/in/erdhanesh"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.1, color: "#ffffff" }}
-            whileTap={{ scale: 0.95 }}
-            className="contact-link"
-          >
-            💼 LinkedIn
-          </motion.a>
-           <motion.a
-            href="mailto:dhaneshkumar15.prajapati@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.1, color: "#ffffff" }}
-            whileTap={{ scale: 0.95 }}
-            className="contact-link"
-          >
-            📧 Gmail
-          </motion.a>
-        </div>
-      </Section> */}
-
-       {/* Footer */}
       <Footer />
     </div>
   );
