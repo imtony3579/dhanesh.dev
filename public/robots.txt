@@ -1,3 +1,10 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap location
+Sitemap: https://dhanesh.dev/sitemap.xml
+
+# Disallow certain paths if needed
+# Disallow: /admin/
+# Disallow: /private/

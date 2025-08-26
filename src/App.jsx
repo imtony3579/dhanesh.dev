@@ -25,6 +25,11 @@ function App() {
 
   return (
     <div className="App">
+      {/* Add hidden h1 for SEO */}
+      <h1 style={{ position: 'absolute', left: '-9999px', top: '-9999px' }}>
+        Dhaneshkumar Prajapati - Software Developer and Machine Learning Engineer
+      </h1>
+      
       {/* Navigation */}
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
