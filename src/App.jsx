@@ -138,7 +138,8 @@ function App() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-       I'm a Software Developer and Machine Learning Engineer with over 
+       Hi, I'm <strong>Dhaneshkumar Prajapati</strong> (also known as <strong>Dhansh</strong>), 
+       a Software Developer and Machine Learning Engineer with over 
        <strong> 4 years</strong> of experience building smart applications 
        powered by AI and mobile solutions. I specialize in creating 
        software that can learn from data and make predictions, helping 
