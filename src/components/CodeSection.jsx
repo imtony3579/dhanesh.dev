@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import LineNumbers from './LineNumbers';
+import LineNumbers from './LineNumbers.jsx';
 
 const CodeSection = ({ id, className = '', children, ...props }) => {
   const sectionRef = useRef(null);

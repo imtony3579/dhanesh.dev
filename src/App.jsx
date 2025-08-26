@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import CodeSection from "./components/CodeSection";
-import Footer from "./components/Footer";
-import ExperienceCard from "./components/ExperienceCard";
-import ProjectCard from "./components/ProjectCard";
-import SkillItem from "./components/SkillItem";
+import CodeSection from "./components/CodeSection.jsx";
+import Footer from "./components/Footer.jsx";
+import ExperienceCard from "./components/ExperienceCard.jsx";
+import ProjectCard from "./components/ProjectCard.jsx";
+import SkillItem from "./components/SkillItem.jsx";
 import "./styles/variables.css";
 import "./styles/base.css";
 import "./styles/navbar.css";

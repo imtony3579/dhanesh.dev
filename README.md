@@ -1,70 +1,122 @@
-# Getting Started with Create React App
+# Dhaneshkumar Prajapati - Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a personal portfolio website built with React and Vite, showcasing my experience as a Software Developer and Machine Learning Engineer.
 
-## Available Scripts
+## 🚀 Tech Stack
 
-In the project directory, you can run:
+- **React 19** - Modern React with latest features
+- **Vite** - Fast build tool and development server
+- **Framer Motion** - Smooth animations and interactions
+- **CSS3** - Custom styling with modern CSS features
 
-### `npm start`
+## 📋 Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Node.js 20+** (Required for Vite)
+- **npm 10+**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Setup Instructions
 
-### `npm test`
+### 1. Node.js Setup
+This project requires Node.js 20 or higher. If you have an older version:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+# Install Node.js 20 via Homebrew (macOS)
+brew install node@20
 
-### `npm run build`
+# Add to your PATH
+echo 'export PATH="/usr/local/opt/node@20/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 2. Project Setup
+```bash
+# Clone the repository
+git clone <repository-url>
+cd dhanesh.dev
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Set up Node.js 20 environment (if needed)
+source setup-node.sh
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Install dependencies
+npm install
+```
 
-### `npm run eject`
+## 🏃‍♂️ Available Scripts
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Development
+```bash
+npm run dev     # Start development server at http://localhost:3000
+npm start       # Alternative to npm run dev
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Production
+```bash
+npm run build   # Build for production to `dist/` folder
+npm run preview # Preview production build locally
+```
 
 ### Deployment
+```bash
+npm run deploy-ssh    # Deploy to GitHub Pages with SSH authentication
+npm run deploy        # Deploy to GitHub Pages (standard)
+npm run clean         # Clean build directory
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🚀 Deployment
 
-### `npm run build` fails to minify
+The project is configured to deploy to GitHub Pages. The `deploy-ssh` script ensures secure deployment using SSH keys:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Build output**: `dist/` folder (Vite default)
+- **Deploy branch**: `gh-pages`
+- **SSH authentication**: Uses `~/.ssh/id_ed25519` key
+
+## 🔧 Migration Notes
+
+This project has been migrated from Create React App to Vite for:
+- ⚡ Faster development server
+- 🚀 Quicker builds
+- 📦 Smaller bundle sizes
+- 🛠️ Better developer experience
+
+### Key Changes:
+- Entry point: `src/index.js` → `src/main.jsx`
+- Build output: `build/` → `dist/`
+- All components converted to `.jsx` extensions
+- Vite configuration replaces CRACO setup
+
+## 📁 Project Structure
+
+```
+src/
+├── main.jsx              # Application entry point
+├── App.jsx               # Main application component
+├── components/           # Reusable React components
+│   ├── CodeSection.jsx
+│   ├── ExperienceCard.jsx
+│   ├── Footer.jsx
+│   └── ...
+└── styles/              # CSS modules
+    ├── variables.css
+    ├── base.css
+    └── ...
+```
+
+## 🌟 Features
+
+- **Responsive Design** - Works on all devices
+- **Smooth Animations** - Powered by Framer Motion
+- **Code-like Interface** - Unique developer-themed design
+- **Performance Optimized** - Fast loading and smooth interactions
+- **SEO Friendly** - Proper meta tags and structure
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
