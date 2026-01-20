@@ -2,6 +2,19 @@
 
 This is a personal portfolio website built with React and Vite, showcasing my experience as a Software Developer and Machine Learning Engineer.
 
+## ⚡ Quick Start
+
+```bash
+# Clone and setup
+git clone <repository-url>
+cd dhanesh.dev
+npm install
+
+# Start development server with Vite
+npm run dev
+# 🚀 Server will start at http://localhost:3000
+```
+
 ## 🚀 Tech Stack
 
 - **React 19** - Modern React with latest features
@@ -41,13 +54,22 @@ source setup-node.sh
 npm install
 ```
 
-## 🏃‍♂️ Available Scripts
+## 🏃‍♂️ Running the Development Server
 
-### Development
+### Start Development Server with Vite
 ```bash
-npm run dev     # Start development server at http://localhost:3000
-npm start       # Alternative to npm run dev
+# Start the Vite development server
+npm run dev     # Primary command - starts Vite dev server at http://localhost:3000
+npm start       # Alternative command (also uses Vite)
 ```
+
+The Vite development server provides:
+- ⚡ **Hot Module Replacement (HMR)** - Instant updates without page reload
+- 🚀 **Fast startup** - Server starts in milliseconds
+- 🔥 **Optimized bundling** - ES modules for faster development
+- 🛠️ **Built-in TypeScript support** - No additional configuration needed
+
+### Other Available Scripts
 
 ### Production
 ```bash
@@ -70,13 +92,22 @@ The project is configured to deploy to GitHub Pages. The `deploy-ssh` script ens
 - **Deploy branch**: `gh-pages`
 - **SSH authentication**: Uses `~/.ssh/id_ed25519` key
 
-## 🔧 Migration Notes
+## 🔧 Vite Migration & Benefits
 
-This project has been migrated from Create React App to Vite for:
-- ⚡ Faster development server
-- 🚀 Quicker builds
-- 📦 Smaller bundle sizes
-- 🛠️ Better developer experience
+This project has been migrated from Create React App to **Vite** for superior performance:
+
+### Why Vite?
+- ⚡ **Lightning-fast dev server** - Starts in milliseconds vs seconds
+- 🚀 **Instant Hot Module Replacement** - See changes immediately
+- � **Optimized builds** - Smaller bundle sizes with Rollup
+- 🛠️ **Better developer experience** - Native ES modules support
+- 🔥 **No bundling in development** - Serves modules directly to browser
+
+### Development Server Features
+- **Port**: Configured to run on `http://localhost:3000`
+- **Auto-reload**: Browser automatically opens on server start
+- **HMR**: Preserves component state during code changes
+- **Error overlay**: Clear error messages directly in browser
 
 ### Key Changes:
 - Entry point: `src/index.js` → `src/main.jsx`
