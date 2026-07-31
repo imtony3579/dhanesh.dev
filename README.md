@@ -79,14 +79,40 @@ npm run preview # Preview production build locally
 
 ### Deployment
 ```bash
-npm run deploy-ssh    # Deploy to GitHub Pages with SSH authentication
 npm run deploy        # Deploy to GitHub Pages (standard)
+npm run deploy-ssh    # Deploy to GitHub Pages with SSH authentication
 npm run clean         # Clean build directory
 ```
 
+> **Tip:** Use `[deploy]` in your commit message to trigger automatic deployment via GitHub Actions instead of running these manually.
+
 ## 🚀 Deployment
 
-The project is configured to deploy to GitHub Pages. The `deploy-ssh` script ensures secure deployment using SSH keys:
+The project is configured to deploy to GitHub Pages.
+
+### Automatic Deployment (GitHub Actions)
+
+A CI/CD workflow (`.github/workflows/deploy.yml`) automatically builds and deploys to the `gh-pages` branch when you push to `main` — but **only if your commit message contains `[deploy]`**.
+
+```bash
+git commit -m "your message [deploy]"
+git push origin main
+```
+
+Without `[deploy]` in the commit message, the push goes through normally but the deployment is skipped.
+
+- **Workflow file**: `.github/workflows/deploy.yml`
+- **Trigger**: Push to `main` with `[deploy]` in the commit message
+- **Build output**: `dist/` folder
+- **Deploy branch**: `gh-pages`
+
+### Manual Deployment
+
+```bash
+npm run deploy        # Deploy to GitHub Pages (standard)
+npm run deploy-ssh    # Deploy using SSH authentication
+npm run clean         # Clean build directory
+```
 
 - **Build output**: `dist/` folder (Vite default)
 - **Deploy branch**: `gh-pages`
