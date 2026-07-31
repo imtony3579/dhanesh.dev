@@ -28,6 +28,8 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          VITE_BUILD_DATE: ${{ github.event.head_commit.timestamp }}
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4

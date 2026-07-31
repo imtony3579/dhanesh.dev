@@ -2,6 +2,14 @@ import { motion } from "framer-motion";
 import React, { useState } from "react";
 
 
+const getLastUpdatedDate = () => {
+  const buildDateStr = import.meta.env.VITE_BUILD_DATE;
+  const buildDate = buildDateStr ? new Date(buildDateStr) : new Date();
+  const now = new Date();
+  const threeMonthsAgo = new Date(now.getFullYear(), now.getMonth() - 3, now.getDate());
+  return buildDate >= threeMonthsAgo ? buildDate : threeMonthsAgo;
+};
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   
@@ -71,7 +79,7 @@ export default function Footer() {
           React • JavaScript • CSS
         </span>
         <span className="status-item">
-          Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric', day: '2-digit' })}
+          Last updated: {getLastUpdatedDate().toLocaleDateString('en-US', { month: 'long', year: 'numeric', day: '2-digit' })}
         </span>
       </div>
     </motion.footer>
