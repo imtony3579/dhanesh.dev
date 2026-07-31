@@ -138,7 +138,7 @@ function App() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-       Hi, I'm <strong>Dhaneshkumar Prajapati</strong> (also known as <strong>Dhansh</strong>), 
+       Hi, I'm <strong>Dhaneshkumar Prajapati</strong> (also known as <strong>Dhanesh</strong>), 
        a Software Developer and Machine Learning Engineer with over 
        <strong> 4 years</strong> of experience building smart applications 
        powered by AI and mobile solutions. I specialize in creating 
